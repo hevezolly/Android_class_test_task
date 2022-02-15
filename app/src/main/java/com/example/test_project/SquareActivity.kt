@@ -18,14 +18,14 @@ class SquareActivity : LoggingActivity("Square activity") {
         displayRecivedValue()
     }
 
-    fun onButtonPress (view: View) {
+    fun goToMainActivity (view: View) {
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(MainActivity.COUNTER_VALUE, recivedValue)
+        intent.putExtra(MainActivity.COUNTER_VALUE_KEY, recivedValue)
         startActivity(intent)
     }
 
     fun displayRecivedValue(){
-        recivedValue = intent.getIntExtra(MainActivity.COUNTER_VALUE, 0)
+        recivedValue = intent.getIntExtra(MainActivity.COUNTER_VALUE_KEY, 0)
         displayText.text = (recivedValue * recivedValue).toString()
     }
 

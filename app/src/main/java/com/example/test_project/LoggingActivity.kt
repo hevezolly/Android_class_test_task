@@ -9,6 +9,11 @@ abstract class LoggingActivity(val activityTag: String) : AppCompatActivity() {
         Log.d(activityTag,"$message. Current state: ${lifecycle.currentState}")
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        log("on save instance state called")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         log("on create called")
